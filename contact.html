@@ -1,0 +1,44 @@
+---
+layout: page
+title: Контакты
+description: Отвечу на интересующие вопросы
+background: '/img/bg-contact.jpg'
+form: true
+---
+
+<p>Хотите связаться? Заполните форму ниже, чтобы отправить мне сообщение, и я свяжусь с вами как можно скорее!</p>
+<form name="sentMessage" id="contactForm" novalidate action="https://formspree.io/44heroh@mail.ru" method="POST">
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label>Ф.И.О</label>
+      <input type="text" class="form-control" placeholder="Ф.И.О" id="name" required data-validation-required-message="Пожалуйста введите фио.">
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label>Email</label>
+      <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Пожалуйста введите email.">
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="form-group col-xs-12 floating-label-form-group controls">
+      <label>Телефон</label>
+      <input type="tel" class="form-control" placeholder="Телефон" id="phone" required data-validation-required-message="Пожалуйста введите номер телефона.">
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label>Сообщение</label>
+      <textarea rows="5" class="form-control" placeholder="Сообщение" id="message" required data-validation-required-message="Пожалуйста введите сообщение."></textarea>
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
+  <br>
+  <div id="success"></div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" id="sendMessageButton">Отправить</button>
+  </div>
+</form>

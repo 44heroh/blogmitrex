@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "Выстраивание Разделов в виде дерева"
+subtitle: "Выстраивание Разделов в виде дерева"
+date:   2018-12-29 17:31:55 +0300
+background: '/img/posts/04.jpg'
+categories: bitrix
+---
+Выстраивание Разделов в виде дерева
+
+{% highlight ruby %}
+
+function getTree($data) {
+	$tree = array();
+
+	foreach ($data as $id => &$node) {
+		//Если нет вложений
+		if (!$node['IBLOCK_SECTION_ID']){
+			$tree[$id] = &$node;
+		}else{
+			//Если есть потомки то перебераем массив
+			$data[$node['IBLOCK_SECTION_ID']]['childs'][$id] = &$node;
+		}
+	}
+	return $tree;
+}
+
+{% endhighlight %}
